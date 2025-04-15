@@ -1,108 +1,140 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>לוח מחוונים אינטראקטיבי - Tableau</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-    }
-    .description {
-      text-align: center;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      direction: rtl;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .buttons button {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #3498db;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .buttons button:hover {
-      background-color: #2c80b4;
-    }
-    .viz-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Visualization</title>
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.9.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center everything horizontally */
+        }
+        #tableauViz {
+            width: 90%; /* Adjust as needed, but keep it responsive */
+            max-width: 1000px; /* Maximum width */
+            height: 600px; /* Fixed height, adjust as needed */
+            margin: 20px auto; /* Add margin and center the viz */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white; /* Ensure the viz background is white */
+        }
+        #description {
+            width: 90%; /* Match the width of the visualization */
+            max-width: 1000px; /* Match the max-width */
+            margin: 20px auto; /* Add margin and center the description */
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center the description text */
+        }
+        #buttons {
+            width: 90%; /* Match the width of the visualization */
+            max-width: 1000px; /* Match the max-width */
+            margin: 20px auto; /* Add margin and center the buttons */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the buttons */
+            gap: 10px; /* Add some gap between buttons */
+        }
+        .button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #2c3e50;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>לוח מחוונים אינטראקטיבי</h1>
-  </header>
-
-  <div class="description">
-    <p>ברוכים הבאים לדשבורד האינטראקטיבי. כאן תוכלו לראות נתונים בזמן אמת באמצעות כלי Tableau.</p>
-  </div>
-
-  <div class="buttons">
-    <button onclick="document.getElementById('vizContainer').scrollIntoView({ behavior: 'smooth' });">מעבר לדשבורד</button>
-    <button onclick="alert('פיצ'רים נוספים יתווספו בקרוב!')">עוד כלים</button>
-    <button onclick="alert('ליצירת קשר: info@example.com')">צור קשר</button>
-  </div>
-
-  <div class="viz-container" id="vizContainer">
-    <div class='tableauPlaceholder' id='viz1744700775915' style='position: relative'>
-      <noscript>
-        <a href='#'>
-          <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/MB/MBG8PT35Q/1_rss.png' style='border: none' />
-        </a>
-      </noscript>
-      <object class='tableauViz' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='path' value='shared/MBG8PT35Q' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image' value='https://public.tableau.com/static/images/MB/MBG8PT35Q/1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='en-US' />
-        <param name='filter' value='publish=yes' />
-      </object>
+    <h1>Your Visualization</h1>
+    <div id="tableauViz"></div>
+    <div id="description">
+        <p>This visualization provides an interactive exploration of data.  Use the controls within the visualization to filter and explore different aspects of the data.  The buttons below provide additional ways to interact with the visualization.</p>
     </div>
-    <script type='text/javascript'>
-      var divElement = document.getElementById('viz1744700775915');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      if (divElement.offsetWidth > 800) {
-        vizElement.style.width = '100%';
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-      } else if (divElement.offsetWidth > 500) {
-        vizElement.style.width = '100%';
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-      } else {
-        vizElement.style.width = '100%';
-        vizElement.style.height = '1727px';
-      }
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    <div id="buttons">
+        <button id="resetButton" class="button">Reset Filters</button>
+        <button id="filterButton" class="button">Apply Filter</button>
+        <button id="exportButton" class="button">Export Data</button>
+    </div>
+
+    <script>
+        let viz;
+        function initViz() {
+            const containerDiv = document.getElementById('tableauViz');
+            const url = 'https://public.tableau.com/shared/MBG8PT35Q?:display_count=n&:origin=viz_share_link';
+            const options = {
+                hideTabs: true,
+                onFirstInteractive: function() {
+                    viz = vizInstance;
+                    console.log("Viz is now interactive");
+                }
+            };
+            const vizInstance = new tableau.Viz(containerDiv, url, options);
+        }
+
+        document.addEventListener('DOMContentLoaded', initViz);
+
+        const resetButton = document.getElementById('resetButton');
+        resetButton.addEventListener('click', function() {
+            if (viz) {
+                viz.revertAllAsync();
+                console.log("Filters reset");
+            } else {
+                console.warn("Viz not initialized yet");
+            }
+        });
+
+        const filterButton = document.getElementById('filterButton');
+        filterButton.addEventListener('click', function() {
+            if (viz) {
+                //  Replace 'YourFieldName' and 'YourValue' with your actual field and value.
+                viz.applyFilterAsync('Category', 'Furniture', tableau.FilterUpdateType.REPLACE);
+                console.log("Filter applied");
+            } else {
+                console.warn("Viz not initialized yet");
+            }
+        });
+
+        const exportButton = document.getElementById('exportButton');
+        exportButton.addEventListener('click', function() {
+            if (viz) {
+                viz.exportDataAsync().then(function(data) {
+                    console.log(data); //  Do something with the exported data
+                    alert("Data exported to console.  See console for data."); // simple feedback
+                });
+            } else {
+                console.warn("Viz not initialized yet");
+            }
+        });
     </script>
-  </div>
 </body>
 </html>
+
