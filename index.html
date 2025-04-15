@@ -76,9 +76,8 @@
     <div id="description">
         <p>This dashboard provides insights into the System for Selling Sausages. Explore the data to understand sales trends, product performance, and other relevant metrics.</p>
     </div>
-
     <script type="text/javascript">
-        var divElement = document.getElementById('tableauViz');
+        var divElement = document.getElementById('viz1744716025331');
         var vizElement = divElement.getElementsByTagName('object')[0];
         function resizeViz() {
             if (divElement.offsetWidth > 800) {
@@ -89,12 +88,11 @@
                 vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
             } else {
                 vizElement.style.width = '100%';
-                vizElement.style.height = '1877px';
+                vizElement.style.height = '1827px';
             }
         }
         resizeViz(); // Initial resize
         window.addEventListener('resize', resizeViz); // Resize on window resize
-
 
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
