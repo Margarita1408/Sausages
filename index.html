@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sausage Sales Dashboard</title>
+    <title>דשבורד מכירות נקניקיות</title>
     <script src="https://public.tableau.com/javascripts/api/tableau-2.9.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,13 +17,13 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center everything horizontally */
+            align-items: center; /* מרכוז אופקי */
         }
         #tableauViz {
-            width: 95%; /* Adjust as needed, providing some margin */
-            max-width: 1200px; /* maximum width for larger screens */
-            height: auto; /* Maintain aspect ratio, adjust initial height as needed */
-            margin: 20px auto; /* Add margin and center the viz */
+            width: 95%; /* התאמה לגודל המסך, עם שוליים */
+            max-width: 1200px; /* רוחב מקסימלי למסכים גדולים */
+            height: auto; /* שמירה על יחס גובה-רוחב */
+            margin: 20px auto; /* הוספת מרווח ומרכוז */
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -45,11 +45,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
     </style>
 </head>
 <body>
-    <h1>System for Selling Sausages Dashboard</h1>
+    <h1>דשבורד מכירות נקניקיות</h1>
     <div id="tableauViz">
         <noscript>
             <a href="#">
@@ -63,7 +62,7 @@
             <param name="name" value="SystemforSellingSausages/Dashboard1" />
             <param name="tabs" value="no" />
             <param name="toolbar" value="yes" />
-            <param name="static_image" value="https://public.tableau.com/static/images/Sy/SystemforSellingSausages/Dashboard1/1.png" />
+            <param name="static_image" value="https%3A%2F%2Fpublic.tableau.com%2Fstatic%2Fimages%2FSy%2FSystemforSellingSausages%2FDashboard1%2F1.png" />
             <param name="animate_transition" value="yes" />
             <param name="display_static_image" value="yes" />
             <param name="display_spinner" value="yes" />
@@ -74,11 +73,12 @@
         </object>
     </div>
     <div id="description">
-        <p>This dashboard provides insights into the System for Selling Sausages. Explore the data to understand sales trends, product performance, and other relevant metrics.</p>
+        <p>דשבורד זה מספק תובנות לגבי מערכת מכירת הנקניקיות. חקור את הנתונים כדי להבין את מגמות המכירות, ביצועי המוצרים ומדדים רלוונטיים אחרים.</p>
     </div>
     <script type="text/javascript">
         var divElement = document.getElementById('viz1744716025331');
         var vizElement = divElement.getElementsByTagName('object')[0];
+
         function resizeViz() {
             if (divElement.offsetWidth > 800) {
                 vizElement.style.width = '100%';
@@ -91,8 +91,9 @@
                 vizElement.style.height = '1827px';
             }
         }
-        resizeViz(); // Initial resize
-        window.addEventListener('resize', resizeViz); // Resize on window resize
+
+        resizeViz(); // הפעלה ראשונית של הפונקציה
+        window.addEventListener('resize', resizeViz); // הפעלה בכל שינוי גודל של החלון
 
         var scriptElement = document.createElement('script');
         scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
@@ -100,4 +101,3 @@
     </script>
 </body>
 </html>
-
