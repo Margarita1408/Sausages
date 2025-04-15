@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>דשבורד מכירות נקניקיות</title>
+    <title>Sausage Sales Dashboard</title>
     <script src="https://public.tableau.com/javascripts/api/tableau-2.9.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,18 +22,12 @@
         #tableauViz {
             width: 95%;
             max-width: 1200px;
-            height: 600px; /* גובה קבוע כדי לתת ל-Tableau מקום */
+            height: auto;
             margin: 20px auto;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: white;
-            position: relative; /* חשוב עבור טעינה תקינה של Tableau */
-        }
-        #tableauViz object {
-            display: block;
-            width: 100%;
-            height: 100%;
         }
         h1 {
             text-align: center;
@@ -54,7 +48,7 @@
     </style>
 </head>
 <body>
-    <h1>דשבורד מכירות נקניקיות</h1>
+    <h1>System for Selling Sausages Dashboard</h1>
     <div id="tableauViz">
         <noscript>
             <a href="#">
@@ -68,7 +62,7 @@
             <param name="name" value="SystemforSellingSausages/Dashboard1" />
             <param name="tabs" value="no" />
             <param name="toolbar" value="yes" />
-            <param name="static_image" value="https%3A%2F%2Fpublic.tableau.com%2Fstatic%2Fimages%2FSy%2FSystemforSellingSellingSausages/Dashboard1/1.png" />
+            <param name="static_image" value="https://public.tableau.com/static/images/Sy/SystemforSellingSausages/Dashboard1/1.png" />
             <param name="animate_transition" value="yes" />
             <param name="display_static_image" value="yes" />
             <param name="display_spinner" value="yes" />
@@ -79,51 +73,29 @@
         </object>
     </div>
     <div id="description">
-        <p>דשבורד זה מספק תובנות לגבי מערכת מכירת הנקניקיות. חקור את הנתונים כדי להבין את מגמות המכירות, ביצועי המוצרים ומדדים רלוונטיים אחרים.</p>
+        <p>This dashboard provides insights into the System for Selling Sausages. Explore the data to understand sales trends, product performance, and other relevant metrics.</p>
     </div>
     <script type="text/javascript">
-        var divElement = document.getElementById('viz1744716025331');
+        var divElement = document.getElementById('viz1744716990324');
         var vizElement = divElement.getElementsByTagName('object')[0];
-
-        function initViz() {
-            if (vizElement) {
-                vizElement.style.display = 'block';
-                vizElement.style.width = '100%';
-                vizElement.style.height = '100%';
-
-                var tableauViz = new tableau.Viz(divElement, "https://public.tableau.com/shared/MBG8PT35Q?:display_count=n&:origin=viz_share_link", {
-                    hideTabs: true,
-                    onFirstInteractive: function () {
-                        console.log("הוויזואליזציה אינטראקטיבית");
-                    }
-                });
-            } else {
-                console.error("אובייקט ה-viz לא נמצא");
-            }
-        }
-
-        // הפעל את initViz לאחר שהדף נטען במלואו
-        document.addEventListener('DOMContentLoaded', initViz);
-
-
         function resizeViz() {
-            var containerWidth = divElement.offsetWidth;
-            var containerHeight = 600;
-
-            if (containerWidth > 800) {
+            if (divElement.offsetWidth > 800) {
                 vizElement.style.width = '100%';
-                vizElement.style.height = (containerWidth * 0.75) + 'px';
-            } else if (containerWidth > 500) {
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            } else if (divElement.offsetWidth > 500) {
                 vizElement.style.width = '100%';
-                vizElement.style.height = (containerWidth * 0.75) + 'px';
+                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
             } else {
                 vizElement.style.width = '100%';
                 vizElement.style.height = '1827px';
             }
         }
+        resizeViz();
+        window.addEventListener('resize', resizeViz);
 
-        //resizeViz();
-        //window.addEventListener('resize', resizeViz);
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
 </body>
 </html>
