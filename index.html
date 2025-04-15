@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Visualization Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background-color: #005b96;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .description {
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .buttons button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #0074D9;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+      background-color: #005b96;
+    }
+    .viz-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Interactive Data Dashboard</h1>
+  </header>
+
+  <div class="description">
+    <p>Explore our interactive visualization to gain insights into our data trends and patterns. Use the buttons below to navigate or take actions.</p>
+  </div>
+
+  <div class="buttons">
+    <button onclick="window.scrollTo({ top: document.querySelector('.viz-container').offsetTop, behavior: 'smooth' })">Go to Dashboard</button>
+    <button onclick="alert('More visualizations coming soon!')">More Visuals</button>
+    <button onclick="alert('Need help? Contact us!')">Help</button>
+  </div>
+
+  <div class="viz-container">
+    <iframe src="https://public.tableau.com/shared/MBG8PT35Q?:display_count=n&:origin=viz_share_link"></iframe>
+  </div>
+</body>
+</html>
