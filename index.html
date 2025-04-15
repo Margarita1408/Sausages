@@ -3,77 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>לוח מחוונים אינטראקטיבי</title>
+  <title>לוח מחוונים אינטראקטיבי - Tableau</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
     }
     header {
       background-color: #2c3e50;
       color: white;
-      padding: 1.5rem;
       text-align: center;
+      padding: 1.5rem;
     }
     .description {
       text-align: center;
-      padding: 1rem;
+      padding: 1rem 2rem;
       font-size: 1.2rem;
+      direction: rtl;
     }
     .buttons {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
-      margin: 1rem;
+      margin-bottom: 1.5rem;
     }
     .buttons button {
-      padding: 0.7rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       border: none;
       border-radius: 8px;
-      background-color: #2980b9;
+      background-color: #3498db;
       color: white;
       font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s;
     }
     .buttons button:hover {
-      background-color: #1c5980;
+      background-color: #2c80b4;
     }
     .viz-container {
       max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .viz-container iframe {
-      width: 100%;
-      height: 900px;
-      border: none;
-      border-radius: 12px;
+      margin: 0 auto;
+      padding: 1rem;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>לוח מחוונים אינטראקטיבי</h1>
   </header>
 
   <div class="description">
-    <p>כאן תוכלו לראות את הדשבורד האינטראקטיבי שיצרתי עם Tableau. לחצו על הכפתורים למטה לפעולות נוספות.</p>
+    <p>ברוכים הבאים לדשבורד האינטראקטיבי. כאן תוכלו לראות נתונים בזמן אמת באמצעות כלי Tableau.</p>
   </div>
 
   <div class="buttons">
-    <button onclick="document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' });">מעבר לדשבורד</button>
-    <button onclick="alert('דוחות נוספים יתווספו בהמשך!')">עוד דוחות</button>
-    <button onclick="alert('ליצירת קשר: info@example.com')">עזרה</button>
+    <button onclick="document.getElementById('vizContainer').scrollIntoView({ behavior: 'smooth' });">מעבר לדשבורד</button>
+    <button onclick="alert('פיצ'רים נוספים יתווספו בקרוב!')">עוד כלים</button>
+    <button onclick="alert('ליצירת קשר: info@example.com')">צור קשר</button>
   </div>
 
-  <div class="viz-container" id="dashboard">
-    <iframe src="https://public.tableau.com/shared/MBG8PT35Q?:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
+  <div class="viz-container" id="vizContainer">
+    <div class='tableauPlaceholder' id='viz1744700775915' style='position: relative'>
+      <noscript>
+        <a href='#'>
+          <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/MB/MBG8PT35Q/1_rss.png' style='border: none' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='path' value='shared/MBG8PT35Q' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/MB/MBG8PT35Q/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+        <param name='filter' value='publish=yes' />
+      </object>
+    </div>
+    <script type='text/javascript'>
+      var divElement = document.getElementById('viz1744700775915');
+      var vizElement = divElement.getElementsByTagName('object')[0];
+      if (divElement.offsetWidth > 800) {
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+      } else if (divElement.offsetWidth > 500) {
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+      } else {
+        vizElement.style.width = '100%';
+        vizElement.style.height = '1727px';
+      }
+      var scriptElement = document.createElement('script');
+      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
   </div>
-
 </body>
 </html>
