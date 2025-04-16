@@ -1,101 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sausage Sales Dashboard</title>
-    <script src="https://public.tableau.com/javascripts/api/tableau-2.9.0.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #tableauViz {
-            width: 95%;
-            max-width: 1200px;
-            height: auto;
-            margin: 20px auto;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: white;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-            color: #2c3e50;
-        }
-        #description {
-            width: 95%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>מערכת מכירת נקניקיות</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    iframe {
+      width: 90%;
+      height: 600px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>System for Selling Sausages Dashboard</h1>
-    <div id="tableauViz">
-        <noscript>
-            <a href="#">
-                <img alt="Dashboard 1" src="https://public.tableau.com/static/images/Sy/SystemforSellingSausages/Dashboard1/1_rss.png" style="border: none" />
-            </a>
-        </noscript>
-        <object class="tableauViz" style="display:none;">
-            <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-            <param name="embed_code_version" value="3" />
-            <param name="site_root" value="" />
-            <param name="name" value="SystemforSellingSausages/Dashboard1" />
-            <param name="tabs" value="no" />
-            <param name="toolbar" value="yes" />
-            <param name="static_image" value="https://public.tableau.com/static/images/Sy/SystemforSellingSausages/Dashboard1/1.png" />
-            <param name="animate_transition" value="yes" />
-            <param name="display_static_image" value="yes" />
-            <param name="display_spinner" value="yes" />
-            <param name="display_overlay" value="yes" />
-            <param name="display_count" value="yes" />
-            <param name="language" value="en-US" />
-            <param name="filter" value="publish=yes" />
-        </object>
-    </div>
-    <div id="description">
-        <p>This dashboard provides insights into the System for Selling Sausages. Explore the data to understand sales trends, product performance, and other relevant metrics.</p>
-    </div>
-    <script type="text/javascript">
-        var divElement = document.getElementById('viz1744716990324');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        function resizeViz() {
-            if (divElement.offsetWidth > 800) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else if (divElement.offsetWidth > 500) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else {
-                vizElement.style.width = '100%';
-                vizElement.style.height = '1827px';
-            }
-        }
-        resizeViz();
-        window.addEventListener('resize', resizeViz);
+  <div class="container">
+    <h1>מערכת מכירת נקניקיות</h1>
 
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
+    <div class="buttons">
+      <button onclick="refreshIframe()">רענן</button>
+      <button onclick="openInNewTab()">פתח בחלון חדש</button>
+      <button onclick="toggleIframe()">הצג/הסתר דשבורד</button>
+    </div>
+
+    <iframe id="tableauFrame" src="https://public.tableau.com/views/SystemforSellingSausages/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function refreshIframe() {
+      const iframe = document.getElementById('tableauFrame');
+      iframe.src = iframe.src;
+    }
+
+    function openInNewTab() {
+      window.open('https://public.tableau.com/views/SystemforSellingSausages/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link', '_blank');
+    }
+
+    function toggleIframe() {
+      const iframe = document.getElementById('tableauFrame');
+      iframe.style.display = (iframe.style.display === 'none') ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
